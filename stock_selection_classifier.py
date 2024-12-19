@@ -16,7 +16,7 @@ def train_classifier(X, y, test_size=0.2, random_state=42):
     
     # Initialize and train the classifier
     clf = MLPClassifier(
-        hidden_layer_sizes=(512, 256, 128, 64, 32),  # Deeper network with five hidden layers
+        hidden_layer_sizes=(1024, 512, 128),
         activation='relu',
         solver='adam',
         max_iter=100000,  # Further increased maximum iterations
@@ -25,7 +25,7 @@ def train_classifier(X, y, test_size=0.2, random_state=42):
         validation_fraction=0.2,  # Increased validation set
         n_iter_no_change=150,  # More patience before early stopping
         learning_rate_init=0.001,
-        alpha=0.0005,  # Increased L2 regularization
+        alpha=0.001,  # Increased L2 regularization
         batch_size=64,  # Larger mini-batch size for better stability
         learning_rate='adaptive',
         momentum=0.9,  # Added momentum for faster convergence
